@@ -132,6 +132,35 @@ function rejuv_science_research() {
 add_action( 'init', 'rejuv_science_research' );
 
 /**
+ * Add custom archive/taxonomy template
+ * @param  string $archive_template path to default archive template
+ * @return string path to modified archive template
+ */
+function rejuv_science_archive_template( $archive_template ) {
+    global $post;
+    if ( is_post_type_archive ( 'science_article' ) || is_tax( 'science_taxonomy' ) ) {
+        $archive_template = dirname( __FILE__ ) . '/archive-science_research.php';
+    }
+    return $archive_template;
+}
+add_filter( 'archive_template', 'rejuv_science_archive_template' );
+add_filter( 'taxonomy_archive', 'rejuv_science_archive_template' );
+
+/**
+ * Show only 9 science and research posts
+ * @param  object $query WP_Query object
+ * @return object modified WP_Query object
+ */
+function rejuv_science_archive_post_count( $query ) {
+    if ( 'science_article' == $query->get( 'post_type' ) ) {
+        $query->set( 'posts_per_page', 9 );
+    }
+
+    return $query;
+}
+add_filter( 'pre_get_posts', 'rejuv_science_archive_post_count' );
+
+/**
  * Register custom image sizes
  */
 function rejuv_science_images() {
