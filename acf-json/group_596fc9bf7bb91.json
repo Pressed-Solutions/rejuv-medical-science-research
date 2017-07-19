@@ -1,0 +1,48 @@
+{
+    "key": "group_596fc9bf7bb91",
+    "title": "Science and Research Articles Options",
+    "fields": [
+        {
+            "key": "field_596fc9e1a4975",
+            "label": "Header Image",
+            "name": "header_image",
+            "type": "image",
+            "instructions": "Header image (2000&times;350px)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "science_article_thumb",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-archive-options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1500498493
+}

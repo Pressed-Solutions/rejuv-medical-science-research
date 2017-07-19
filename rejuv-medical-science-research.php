@@ -140,3 +140,38 @@ function rejuv_science_images() {
     add_image_size( 'science_article_lg', 1050, 300, true );
 }
 add_action( 'after_setup_theme', 'rejuv_science_images' );
+
+/**
+ * Add ACF options page
+ */
+function rejuv_science_options() {
+    if ( function_exists( 'acf_add_options_sub_page' ) ) {
+        acf_add_options_sub_page(array(
+            'page_title' 	=> 'Science and Research Article Archive Options',
+            'menu_title'	=> 'Archive Options',
+            'parent_slug'   => 'edit.php?post_type=science_article',
+        ));
+    }
+}
+add_action( 'after_setup_theme', 'rejuv_science_options' );
+
+/**
+ * Set ACF local JSON save directory
+ * @param  string $path ACF local JSON save directory
+ * @return string ACF local JSON save directory
+ */
+add_filter( 'acf/settings/save_json', 'rejuv_science_acf_json_save_point' );
+function rejuv_science_acf_json_save_point( $path ) {
+    return plugin_dir_path( __FILE__ ) . '/acf-json';
+}
+
+/**
+ * Set ACF local JSON open directory
+ * @param  array $path ACF local JSON open directory
+ * @return array ACF local JSON open directory
+ */
+add_filter( 'acf/settings/load_json', 'rejuv_science_acf_json_load_point' );
+function rejuv_science_acf_json_load_point( $path ) {
+    $paths[] = plugin_dir_path( __FILE__ ) . '/acf-json';
+    return $paths;
+}
