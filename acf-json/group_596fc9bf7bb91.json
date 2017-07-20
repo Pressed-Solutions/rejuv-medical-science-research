@@ -3,9 +3,28 @@
     "title": "Science and Research Articles Options",
     "fields": [
         {
+            "key": "field_596fcec57a042",
+            "label": "Header Title",
+            "name": "science_research_header_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_596fc9e1a4975",
             "label": "Header Image",
-            "name": "header_image",
+            "name": "science_research_archive_header_image",
             "type": "image",
             "instructions": "Header image (2000&times;350px)",
             "required": 0,
@@ -44,5 +63,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1500498493
+    "modified": 1500516842
 }

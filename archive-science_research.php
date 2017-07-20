@@ -2,7 +2,7 @@
 get_header();
 get_template_part('template-part', 'head');
 $header_image = get_field( 'science_research_archive_header_image', 'options' );
-$header_title = get_field( 'science_research_archive_header_title', 'options' );
+$header_title = get_field( 'science_research_header_title', 'options' );
 ?>
 
 <div class="row page-header" <?php echo ( $header_image ? 'style="background-image: url(\'' . $header_image . '\');"' : '' ); ?>>
