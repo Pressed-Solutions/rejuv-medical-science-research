@@ -83,8 +83,8 @@ article.science_article .featured-image {
 
 .science-articles-grid p.science-tax-terms {
     font-size: 80%;
-    text-align: left;
     margin-bottom: 0;
+    padding: 0;
 }
 
 .science-articles-grid p.read-more {

@@ -63,7 +63,7 @@ $header_title = get_field( 'science_research_header_title', 'options' );
                             </a>
                         </h2>
                         <?php
-                        echo get_the_term_list( get_the_ID(), 'science_taxonomy', '<p class="science-tax-terms">Research on ', ', ', '</p>' );
+                        echo get_the_term_list( get_the_ID(), 'science_taxonomy', '<p class="science-tax-terms">', ', ', '</p>' );
                         the_excerpt();
                         ?>
                         <p class="read-more">
