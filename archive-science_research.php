@@ -41,7 +41,7 @@ $header_title = get_field( 'science_research_header_title', 'options' );
     </div>
 <?php endif; ?>
 
-<div class="dmbs-main">
+<div class="dmbs-main science-articles-grid">
     <div class="container">
         <div class="row dmbs-content">
             <div class="col-md-12 dmbs-main science-research-articles">
