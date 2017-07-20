@@ -147,7 +147,15 @@ add_filter( 'archive_template', 'rejuv_science_archive_template' );
 add_filter( 'taxonomy_archive', 'rejuv_science_archive_template' );
 
 /**
- * Show only 9 science and research posts
+ * Register site assets
+ */
+function rejuv_science_assets() {
+    wp_register_style( 'science-research', plugin_dir_url( __FILE__ ) . 'css/science-research.css' );
+}
+add_action( 'wp_enqueue_scripts', 'rejuv_science_assets' );
+
+/**
+ * Show only 9 science and research posts on archive/taxonomy pages
  * @param  object $query WP_Query object
  * @return object modified WP_Query object
  */

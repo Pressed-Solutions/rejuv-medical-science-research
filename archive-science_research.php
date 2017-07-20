@@ -1,6 +1,7 @@
 <?php
 get_header();
 get_template_part('template-part', 'head');
+wp_enqueue_style( 'science-research' );
 $header_image = get_field( 'science_research_archive_header_image', 'options' );
 $header_title = get_field( 'science_research_header_title', 'options' );
 ?>

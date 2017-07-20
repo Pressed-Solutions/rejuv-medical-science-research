@@ -1,0 +1,11 @@
+.post-type-archive-science_article .row.page-header h2 {
+    background: none;
+    text-align: center;
+    padding: 2em 1em;
+    font-size: 48px;
+}
+
+.post-type-archive-science_article .page-header {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
