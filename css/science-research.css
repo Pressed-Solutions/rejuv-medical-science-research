@@ -81,6 +81,12 @@ article.science_article .featured-image {
     color: #004b8b;
 }
 
+.science-articles-grid p.science-tax-terms {
+    font-size: 80%;
+    text-align: left;
+    margin-bottom: 0;
+}
+
 .science-articles-grid p.read-more {
     border-top: 1px solid #f4f4f4;
     margin: 0 30px;

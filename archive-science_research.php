@@ -62,7 +62,10 @@ $header_title = get_field( 'science_research_header_title', 'options' );
                                 <?php the_title(); ?>
                             </a>
                         </h2>
-                        <?php the_excerpt(); ?>
+                        <?php
+                        echo get_the_term_list( get_the_ID(), 'science_taxonomy', '<p class="science-tax-terms">Research on ', ', ', '</p>' );
+                        the_excerpt();
+                        ?>
                         <p class="read-more">
                             <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'devdmbootstrap3' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">Read More</a>
                         </p>
