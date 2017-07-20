@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: Rejuv Medical Science and Research Articles
- * Version: 1.1.0
+ * Version: 1.2.0
  * Description: Adds science and research articles custom post type and categories
  * Author: Pressed Solutions
  * Author URI: https://pressedsolutions.com
@@ -220,3 +220,17 @@ function rejuv_science_acf_json_load_point( $path ) {
     $paths[] = plugin_dir_path( __FILE__ ) . '/acf-json';
     return $paths;
 }
+
+/**
+ * Add search form to science/research menu
+ * @param  string $items HTML string of menu items
+ * @param  object $args  menu args
+ * @return string HTML string of menu items
+ */
+function add_search_form( $items, $args ) {
+    if ( 'science_research_articles_menu' == $args->theme_location ) {
+        $items .= '<li class="search">' . get_search_form( false ) . '</li>';
+    }
+    return $items;
+}
+add_filter( 'wp_nav_menu_items', 'add_search_form', 10, 2 );

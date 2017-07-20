@@ -4,11 +4,36 @@
     }
 
     .science-articles-nav .navbar-nav {
-        float: left;
+        float: none;
     }
 
     .science-articles-nav .container {
         padding: 0 45px;
+    }
+
+    .science-articles-nav li.search {
+        float: right;
+        padding: 20px 0;
+    }
+
+    .science-articles-nav #searchform {
+        margin-bottom: 0;
+    }
+
+    .science-articles-nav #searchform #s {
+        display: inline-block;
+        transition: width .3s ease;
+        float: right;
+        width: 50%;
+    }
+
+    .science-articles-nav #searchform #s:focus,
+    .science-articles-nav #searchform #s:active {
+        width: 100%;
+    }
+
+    .science-articles-nav #searchform input[type="submit"] {
+        display: none !important;
     }
 }
 
