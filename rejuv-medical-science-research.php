@@ -155,6 +155,14 @@ function rejuv_science_assets() {
 add_action( 'wp_enqueue_scripts', 'rejuv_science_assets' );
 
 /**
+ * Register custom menu for archive page
+ */
+function rejuv_science_tax_menu() {
+    register_nav_menu( 'science_research_articles_menu', 'Science and Research Categories Menu' );
+}
+add_action( 'after_setup_theme', 'rejuv_science_tax_menu' );
+
+/**
  * Show only 9 science and research posts on archive/taxonomy pages
  * @param  object $query WP_Query object
  * @return object modified WP_Query object
