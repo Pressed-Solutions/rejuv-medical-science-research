@@ -7,9 +7,23 @@ $header_title = get_field( 'science_research_header_title', 'options' );
 ?>
 
 <div class="row page-header" <?php echo ( $header_image ? 'style="background-image: url(\'' . $header_image . '\');"' : '' ); ?>>
-    <h2 class="container">
+    <h2>
         <?php echo ( $header_title ? $header_title : get_the_archive_title() ); ?>
     </h2>
+</div>
+<div class="row science-research-article-category-nav">
+    <div class="container">
+        <div class="col-md-12">
+            <?php
+            $science_taxonomy_args = array(
+                'taxonomy'      => 'science_taxonomy',
+                'title_li'      => '',
+            );
+
+            wp_list_categories( $science_taxonomy_args );
+            ?>
+        </div>
+    </div>
 </div>
 
 <div class="container">
