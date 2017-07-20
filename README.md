@@ -12,7 +12,14 @@ Adds science and research custom post type and categories
 
 ## Description ##
 
-Adds science and research custom post type and categories
+Adds science and research custom post type and categories.
+
+## Development ##
+
+To use browser-sync for local development, run this command:
+`
+$ browser-sync start --proxy "dev.wordpress.dev" --files "css/*.css" --files "*.php"
+`
 
 ## Installation ##
 
