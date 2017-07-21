@@ -52,20 +52,12 @@ $header_title = get_field( 'science_research_header_title', 'options' );
                     the_post();
                     ?>
                     <article <?php post_class( 'col-sm-12 col-md-4' ); ?>>
-                        <?php
-                        if ( has_post_thumbnail() ) {
-                            echo '<a href="' . get_permalink() . '">' . wp_get_attachment_image( get_post_thumbnail_id(), 'science_article_thumb', false, array( 'class' => 'featured-image' ) ) . '</a>';
-                        }
-                        ?>
                         <h2 class="page-header">
                             <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'devdmbootstrap3' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
                                 <?php the_title(); ?>
                             </a>
                         </h2>
-                        <?php
-                        echo get_the_term_list( get_the_ID(), 'science_taxonomy', '<p class="science-tax-terms">', ', ', '</p>' );
-                        the_excerpt();
-                        ?>
+                        <?php the_excerpt(); ?>
                         <p class="read-more">
                             <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'devdmbootstrap3' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">Read More</a>
                         </p>

@@ -69,7 +69,7 @@ function rejuv_science_research() {
         'label'                 => 'Science and Research Article',
         'description'           => 'Science and Research Articles',
         'labels'                => $cpt_labels,
-        'supports'              => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'page-attributes', ),
+        'supports'              => array( 'title', 'editor', 'excerpt', 'author', 'revisions', 'page-attributes', ),
         'taxonomies'            => array( 'science_taxonomy' ),
         'hierarchical'          => false,
         'public'                => true,
@@ -175,16 +175,6 @@ function rejuv_science_archive_post_count( $query ) {
     return $query;
 }
 add_filter( 'pre_get_posts', 'rejuv_science_archive_post_count' );
-
-/**
- * Register custom image sizes
- */
-function rejuv_science_images() {
-    add_image_size( 'science_article_thumb', 350, 100, true );
-    add_image_size( 'science_article_md', 700, 200, true );
-    add_image_size( 'science_article_lg', 1050, 300, true );
-}
-add_action( 'after_setup_theme', 'rejuv_science_images' );
 
 /**
  * Add ACF options page
