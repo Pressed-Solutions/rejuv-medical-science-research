@@ -50,7 +50,7 @@
     margin-right: 30px;
 }
 
-.science-articles-nav .menu-item a {
+.science-articles-nav .nav > .menu-item > a {
     padding-top: 30px;
     padding-bottom: 30px;
 }
