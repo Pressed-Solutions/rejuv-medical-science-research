@@ -168,7 +168,7 @@ add_action( 'after_setup_theme', 'rejuv_science_tax_menu' );
  * @return object modified WP_Query object
  */
 function rejuv_science_archive_post_count( $query ) {
-    if ( 'science_article' == $query->get( 'post_type' ) ) {
+    if ( 'science_article' == $query->get( 'post_type' ) && ( is_archive() || is_tax() ) ) {
         $query->set( 'posts_per_page', 9 );
     }
 
@@ -224,3 +224,63 @@ function add_search_form( $items, $args ) {
     return $items;
 }
 add_filter( 'wp_nav_menu_items', 'add_search_form', 10, 2 );
+
+/**
+ * Display grid of posts by category
+ * @return string HTML output
+ */
+function rejuv_science_research_articles() {
+    $posts_per_term = 5;
+
+    wp_enqueue_style( 'science-research' );
+
+    $science_terms = get_terms( array(
+        'taxonomy'      => 'science_taxonomy',
+    ));
+
+    ob_start();
+    echo '</div></div>';
+    include( 'inc/science-research-nav.php' );
+    echo '<div class="dmbs-main science-articles-grid"><div class="container">';
+
+    echo '<div class="science-research-articles">';
+
+    foreach ( $science_terms as $term ) {
+        $post_query_args = array(
+            'post_type'         => 'science_article',
+            'posts_per_page'    => $posts_per_term + 1,
+            'tax_query'         => array(
+                array(
+                    'taxonomy'  => 'science_taxonomy',
+                    'terms'     => $term->term_id,
+                ),
+            ),
+        );
+
+        $post_query = new WP_Query( $post_query_args );
+
+        if ( $post_query->have_posts() ) {
+            $iterator = 1;
+            $term_link = get_term_link( $term );
+            echo '<div class="row dmbs-content">
+            <h2 class="col-md-12 text-center science-term-header">' . $term->name . '</h2>';
+
+            while ( $post_query->have_posts() && $iterator <= $posts_per_term ) {
+                $post_query->the_post();
+                include( 'excerpt-science_research.php' );
+                $iterator++;
+            }
+
+            if ( $post_query->post_count >= $posts_per_term ) {
+                include( 'inc/read-more-block.php' );
+            }
+            echo '</div>';
+        }
+
+        wp_reset_postdata();
+    }
+
+    echo '</div>';
+    return ob_get_clean();
+}
+add_shortcode( 'rejuv_science_research_articles', 'rejuv_science_research_articles' );

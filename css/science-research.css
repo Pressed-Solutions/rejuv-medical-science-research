@@ -55,19 +55,18 @@
     padding-bottom: 30px;
 }
 
-.post-type-archive-science_article .page-header,
-.tax-science_taxonomy .page-header{
+.science-research-header {
     margin-bottom: 0;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.post-type-archive-science_article .row.page-header h2,
-.tax-science_taxonomy .row.page-header h2 {
-    background: none;
+.science-research-header h2 {
+    background: none !important;
     text-align: center;
-    padding: 2em 1em;
+    padding: 2em 1em !important;
     font-size: 48px;
+    color: white;
 }
 
 .science-articles-grid.dmbs-main {
@@ -87,17 +86,18 @@ article.science_article {
     }
 }
 
-article.science_article .featured-image {
-    width: 100%;
+h2.science-term-header {
+    margin-top: 1em;
+    color: rgba(0,0,0,0.7);
 }
 
-.science-articles-grid .science_article h2,
+.science-articles-grid .science_article h3,
 .science-articles-grid .science_article p {
     padding: 15px;
     text-align: center;
 }
 
-.science-articles-grid .science_article h2 {
+.science-articles-grid .science_article h3 {
     font-size: 24px;
     font-weight: 400;
 }
