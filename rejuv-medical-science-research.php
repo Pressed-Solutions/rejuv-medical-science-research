@@ -307,7 +307,13 @@ function rejuv_science_research_articles() {
 
             while ( $post_query->have_posts() && $iterator <= $posts_per_term ) {
                 $post_query->the_post();
+                if ( ( $iterator % 3 ) == 1 ) {
+                    echo '<div class="row">';
+                }
                 include( 'excerpt-science_research.php' );
+                if ( ( $iterator % 3 ) == 0 || $iterator == $post_query->post_count ) {
+                    echo '</div>';
+                }
                 $iterator++;
             }
 
