@@ -60,7 +60,7 @@ function rejuv_science_research() {
         'filter_items_list'     => 'Filter articles list',
     );
     $cpt_rewrite = array(
-        'slug'                  => 'science-research',
+        'slug'                  => 'science-research/all',
         'with_front'            => true,
         'pages'                 => true,
         'feeds'                 => true,
@@ -80,7 +80,7 @@ function rejuv_science_research() {
         'show_in_admin_bar'     => true,
         'show_in_nav_menus'     => true,
         'can_export'            => true,
-        'has_archive'           => 'science-research',
+        'has_archive'           => 'science-research/all',
         'exclude_from_search'   => false,
         'publicly_queryable'    => true,
         'rewrite'               => $cpt_rewrite,
