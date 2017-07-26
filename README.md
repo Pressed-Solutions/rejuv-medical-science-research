@@ -28,6 +28,9 @@ $ browser-sync start --proxy "dev.wordpress.dev" --files "css/*.css" --files "*.
 
 ## Changelog ##
 
+### 1.3.0 ###
+- Add `[rejuv_science_research_articles]` shortcode for display articles grouped by category
+
 ### 1.2.0 ###
 - Add search form
 
