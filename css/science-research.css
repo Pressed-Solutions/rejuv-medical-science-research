@@ -100,13 +100,14 @@ h2.science-term-header {
 .science-articles-grid .science_article h3 {
     font-size: 24px;
     font-weight: 400;
+    margin-bottom: 0;
 }
 
 .science-articles-grid .science_article a {
     color: #004b8b;
 }
 
-.science-articles-grid p.science-tax-terms {
+.science-articles-grid .treatment-terms {
     font-size: 80%;
     margin-bottom: 0;
     padding: 0;

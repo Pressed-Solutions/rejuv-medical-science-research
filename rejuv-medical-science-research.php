@@ -70,7 +70,7 @@ function rejuv_science_research() {
         'description'           => 'Science and Research Articles',
         'labels'                => $cpt_labels,
         'supports'              => array( 'title', 'editor', 'excerpt', 'author', 'revisions', 'page-attributes', ),
-        'taxonomies'            => array( 'science_taxonomy' ),
+        'taxonomies'            => array( 'science_taxonomy', 'treatment_taxonomy' ),
         'hierarchical'          => false,
         'public'                => true,
         'show_ui'               => true,
@@ -92,7 +92,7 @@ function rejuv_science_research() {
     $tax_labels = array(
         'name'                       => 'Science and Research Categories', 'Taxonomy General Name',
         'singular_name'              => 'Science and Research Category', 'Taxonomy Singular Name',
-        'menu_name'                  => 'Science and Research Category',
+        'menu_name'                  => 'Science and Research Categories',
         'all_items'                  => 'All Items',
         'parent_item'                => 'Parent Item',
         'parent_item_colon'          => 'Parent Item:',
@@ -128,6 +128,46 @@ function rejuv_science_research() {
         'show_in_rest'               => true,
     );
     register_taxonomy( 'science_taxonomy', array( 'science_article' ), $tax_args );
+
+    $tag_labels = array(
+        'name'                       => 'Treatment Categories', 'Taxonomy General Name',
+        'singular_name'              => 'Treatment Category', 'Taxonomy Singular Name',
+        'menu_name'                  => 'Treatment Categories',
+        'all_items'                  => 'All Items',
+        'parent_item'                => 'Parent Item',
+        'parent_item_colon'          => 'Parent Item:',
+        'new_item_name'              => 'New Item Name',
+        'add_new_item'               => 'Add New Item',
+        'edit_item'                  => 'Edit Item',
+        'update_item'                => 'Update Item',
+        'view_item'                  => 'View Item',
+        'separate_items_with_commas' => 'Separate items with commas',
+        'add_or_remove_items'        => 'Add or remove items',
+        'choose_from_most_used'      => 'Choose from the most used',
+        'popular_items'              => 'Popular Items',
+        'search_items'               => 'Search Items',
+        'not_found'                  => 'Not Found',
+        'no_terms'                   => 'No items',
+        'items_list'                 => 'Items list',
+        'items_list_navigation'      => 'Items list navigation',
+    );
+    $tag_rewrite = array(
+        'slug'                       => 'treatment-category',
+        'with_front'                 => true,
+        'hierarchical'               => true,
+    );
+    $tag_args = array(
+        'labels'                     => $tag_labels,
+        'hierarchical'               => false,
+        'public'                     => true,
+        'show_ui'                    => true,
+        'show_admin_column'          => true,
+        'show_in_nav_menus'          => true,
+        'show_tagcloud'              => true,
+        'rewrite'                    => $tag_rewrite,
+        'show_in_rest'               => true,
+    );
+    register_taxonomy( 'treatment_taxonomy', array( 'science_article' ), $tag_args );
 }
 add_action( 'init', 'rejuv_science_research' );
 
@@ -138,7 +178,7 @@ add_action( 'init', 'rejuv_science_research' );
  */
 function rejuv_science_archive_template( $archive_template ) {
     global $post;
-    if ( is_post_type_archive ( 'science_article' ) || is_tax( 'science_taxonomy' ) ) {
+    if ( is_post_type_archive ( 'science_article' ) || is_tax( 'science_taxonomy' ) || is_tax( 'treatment_taxonomy' ) ) {
         $archive_template = dirname( __FILE__ ) . '/archive-science_research.php';
     }
     return $archive_template;
