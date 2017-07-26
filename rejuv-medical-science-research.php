@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: Rejuv Medical Science and Research Articles
- * Version: 1.4.2
+ * Version: 1.4.3
  * Description: Adds science and research articles custom post type and categories
  * Author: Pressed Solutions
  * Author URI: https://pressedsolutions.com
@@ -279,7 +279,8 @@ function rejuv_science_research_articles() {
     ));
 
     ob_start();
-    echo '</div></div>';
+    echo '</div></div>
+    <style type="text/css">.dmbs-main > .page-header { display: none; }</style>';
     include( 'inc/science-research-nav.php' );
     echo '<div class="dmbs-main science-articles-grid"><div class="container">';
 
