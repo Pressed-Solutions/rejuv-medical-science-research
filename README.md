@@ -4,7 +4,7 @@
 **Donate link:** https://cash.me/$AndrewRMinionDesign
 **Requires at least:** 4.0
 **Tested up to:** 4.8
-**Stable tag:** 1.4.4
+**Stable tag:** 1.4.5
 **License:** GPL2
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,9 @@ $ browser-sync start --proxy "dev.wordpress.dev" --files "css/*.css" --files "*.
 1. Add articles.
 
 ## Changelog ##
+
+### 1.4.5 ###
+- Fix link typo
 
 ### 1.4.4 ###
 - Fix menu height
