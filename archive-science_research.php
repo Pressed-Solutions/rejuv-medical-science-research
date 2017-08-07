@@ -9,6 +9,8 @@ include( 'inc/science-research-nav.php' ); ?>
         <div class="row dmbs-content">
             <div class="col-md-12 dmbs-main science-research-articles">
             <?php
+            echo '<div class="row dmbs-content">
+            <h2 class="col-md-12 science-term-header">' . single_term_title( NULL, false ) . '</h2>';
 
             if ( have_posts() ) {
                 while ( have_posts() ) {

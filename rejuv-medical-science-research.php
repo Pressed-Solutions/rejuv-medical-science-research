@@ -304,7 +304,7 @@ function rejuv_science_research_articles() {
             $iterator = 1;
             $term_link = get_term_link( $term );
             echo '<div class="row dmbs-content">
-            <h2 class="col-md-12 text-center science-term-header">' . $term->name . '</h2>';
+            <h2 class="col-md-12 science-term-header">' . $term->name . '</h2>';
 
             while ( $post_query->have_posts() && $iterator <= $posts_per_term ) {
                 $post_query->the_post();
