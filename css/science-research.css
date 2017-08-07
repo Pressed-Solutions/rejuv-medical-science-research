@@ -1,45 +1,10 @@
-@media (min-width: 768px) {
-    .science-articles-nav .navbar {
-        margin-bottom: 0;
-    }
-
-    .science-articles-nav .navbar-nav {
-        float: none;
-    }
-
-    .science-articles-nav .container {
-        padding: 0 45px;
-    }
-
-    .science-articles-nav li.search {
-        float: right;
-        padding: 20px 0;
-    }
-
-    .science-articles-nav #searchform {
-        margin-bottom: 0;
-    }
-
-    .science-articles-nav #searchform #s {
-        display: inline-block;
-        transition: width .3s ease;
-        float: right;
-        width: 50%;
-    }
-
-    .science-articles-nav #searchform #s:focus,
-    .science-articles-nav #searchform #s:active {
-        width: 100%;
-    }
-
-    .science-articles-nav #searchform input[type="submit"] {
-        display: none !important;
-    }
+.science-articles-nav .navbar-header {
+    text-align: center;
 }
 
 .science-articles-nav .navbar-toggle {
-    float: left;
-    margin-left: 45px;
+    float: none;
+    margin: 1em;
 }
 
 .science-articles-nav .menu-item {
@@ -80,7 +45,27 @@ article.science_article {
     margin: 15px;
 }
 
-@media (min-width: 768px) {
+@media screen and (max-width: 767px) {
+    .science-articles-nav { padding: 0 30px; }
+
+    .science-articles-nav .navbar-nav > li > a { padding-left: 10px; }
+
+    .science-articles-nav #searchform #s {
+        display: inline-block;
+        width: 75%;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .science-articles-nav #searchform [type="submit"] {
+        height: auto;
+        padding: 6px !important;
+        position: relative;
+        top: 6px;
+    }
+}
+
+@media screen and (min-width: 768px) {
     article.science_article {
         width: calc(33.33333333% - 30px);
     }
@@ -121,4 +106,44 @@ h2.science-term-header {
     text-align: right;
     text-transform: uppercase;
     font-weight: 700;
+}
+
+@media (min-width: 768px) {
+    .science-articles-nav .navbar {
+        margin-bottom: 0;
+    }
+
+    .science-articles-nav .navbar-nav {
+        float: none;
+    }
+
+    .science-articles-nav .container {
+        padding: 0 45px;
+    }
+
+    .science-articles-nav li.search {
+        float: right;
+        padding: 20px 0;
+    }
+
+    .science-articles-nav #searchform {
+        margin-bottom: 0;
+    }
+
+    .science-articles-nav #searchform #s {
+        display: inline-block;
+        -webkit-transition: width .3s ease;
+        transition: width .3s ease;
+        float: right;
+        width: 50%;
+    }
+
+    .science-articles-nav #searchform #s:focus,
+    .science-articles-nav #searchform #s:active {
+        width: 100%;
+    }
+
+    .science-articles-nav #searchform input[type="submit"] {
+        display: none !important;
+    }
 }
