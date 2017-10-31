@@ -9,6 +9,8 @@
  * License: GPL2
  */
 
+CONST REJUV_PLUGIN_VERSION = '1.5.0';
+
 /*
  * Prevent this file from being accessed directly
  */
@@ -190,7 +192,7 @@ add_filter( 'taxonomy_archive', 'rejuv_science_archive_template' );
  * Register site assets
  */
 function rejuv_science_assets() {
-    wp_enqueue_style( 'science-research', plugin_dir_url( __FILE__ ) . 'css/science-research.css' );
+    wp_enqueue_style( 'science-research', plugin_dir_url( __FILE__ ) . 'css/science-research.css', array(), REJUV_PLUGIN_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'rejuv_science_assets' );
 
