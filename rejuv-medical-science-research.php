@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: Rejuv Medical Science and Research Articles
- * Version: 1.4.5
+ * Version: 1.5.0
  * Description: Adds science and research articles custom post type and categories
  * Author: Pressed Solutions
  * Author URI: https://pressedsolutions.com
@@ -190,7 +190,7 @@ add_filter( 'taxonomy_archive', 'rejuv_science_archive_template' );
  * Register site assets
  */
 function rejuv_science_assets() {
-    wp_register_style( 'science-research', plugin_dir_url( __FILE__ ) . 'css/science-research.css' );
+    wp_enqueue_style( 'science-research', plugin_dir_url( __FILE__ ) . 'css/science-research.css' );
 }
 add_action( 'wp_enqueue_scripts', 'rejuv_science_assets' );
 
@@ -333,3 +333,47 @@ function rejuv_science_research_articles() {
     return ob_get_clean();
 }
 add_shortcode( 'rejuv_science_research_articles', 'rejuv_science_research_articles' );
+
+/**
+ * Get science/research article meta
+ * @return string HTML string
+ */
+function rejuv_get_science_article_meta() {
+    ob_start();
+
+    echo '<p class="meta">';
+
+    if ( get_field( 'author_name' ) ) {
+        echo '<span class="author-name">' . get_field( 'author_name' ) . '</span>';
+    }
+
+    if ( get_field( 'journal_name' ) ) {
+        echo '<span class="journal-name">';
+        if ( get_field( 'journal_url' ) ) {
+            echo '<a href="' . get_field( 'journal_url' ) . '" target="_blank" rel="noopener">' . get_field( 'journal_name' ) . '</a>';
+        } else {
+            the_field( 'journal_name' );
+        }
+        echo '</span>';
+    }
+    if ( get_field( 'article_year' ) ) {
+        echo '<span class="article-year">' . get_field( 'article_year' ) . '</span>';
+    }
+
+    echo '</p>';
+
+    return ob_get_clean();
+}
+
+/**
+ * Add science/research article meta to post content
+ * @param  string $content post content
+ * @return string modified post content
+ */
+function rejuv_science_research_post_content( $content ) {
+    if ( is_singular( 'science_article' ) ) {
+        $content = rejuv_get_science_article_meta() . $content;
+    }
+    return $content;
+}
+add_filter( 'the_content', 'rejuv_science_research_post_content' );

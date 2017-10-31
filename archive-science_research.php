@@ -1,7 +1,6 @@
 <?php
 get_header();
 get_template_part('template-part', 'head');
-wp_enqueue_style( 'science-research' );
 include( 'inc/science-research-nav.php' ); ?>
 
 <div class="dmbs-main science-articles-grid">

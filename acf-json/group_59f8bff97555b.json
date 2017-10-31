@@ -29,7 +29,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "40",
                 "class": "",
                 "id": ""
             },
@@ -42,16 +42,36 @@
             "name": "author_name",
             "type": "text",
             "value": null,
-            "instructions": "",
+            "instructions": "Author name(s)",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "34",
+                "width": "40",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
             "placeholder": "Joe Smith et al.",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59f8c083a5bd2",
+            "label": "Publication Year",
+            "name": "article_year",
+            "type": "text",
+            "value": null,
+            "instructions": "Publication year",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": 2017,
             "prepend": "",
             "append": "",
             "maxlength": ""
@@ -66,7 +86,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -77,24 +97,21 @@
             "maxlength": ""
         },
         {
-            "key": "field_59f8c083a5bd2",
-            "label": "Publish Year",
-            "name": "article_year",
-            "type": "text",
+            "key": "field_59f8c5f97c62e",
+            "label": "Journal URL",
+            "name": "journal_url",
+            "type": "url",
             "value": null,
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
-            "placeholder": 2017,
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "placeholder": ""
         }
     ],
     "location": [
@@ -114,5 +131,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1509474519
+    "modified": 1509475871
 }
