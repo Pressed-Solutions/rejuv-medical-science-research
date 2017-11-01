@@ -31,7 +31,7 @@
     text-align: center;
     padding: 2em 1em !important;
     font-size: 48px;
-    color: white;
+    color: white !important;
 }
 
 .science-articles-grid.dmbs-main {
