@@ -184,15 +184,7 @@ h2.science-term-header {
 
     .science-articles-nav #searchform #s {
         display: inline-block;
-        -webkit-transition: width .3s ease;
-        transition: width .3s ease;
         float: right;
-        width: 50%;
-    }
-
-    .science-articles-nav #searchform #s:focus,
-    .science-articles-nav #searchform #s:active {
-        width: 100%;
     }
 
     .science-articles-nav #searchform input[type="submit"] {
