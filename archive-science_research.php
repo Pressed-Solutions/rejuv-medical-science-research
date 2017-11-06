@@ -12,9 +12,20 @@ include( 'inc/science-research-nav.php' ); ?>
             <h2 class="col-md-12 science-term-header">' . single_term_title( NULL, false ) . '</h2>';
 
             if ( have_posts() ) {
+                $iterator = 1;
+
                 while ( have_posts() ) {
+                    if ( ( $iterator % 3 ) == 1 ) {
+                        echo '<div class="row flex">';
+                    }
+
                     the_post();
                     include( 'excerpt-science_research.php' );
+
+                    if ( ( $iterator % 3 ) == 0 || $iterator == $post_query->post_count ) {
+                        echo '</div>';
+                    }
+                    $iterator++;
                 }
                 ?>
                 <p class="pagination">
