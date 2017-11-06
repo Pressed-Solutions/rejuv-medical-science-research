@@ -95,8 +95,13 @@ article.science_article {
 }
 
 h2.science-term-header {
-    margin-top: 1em;
+    margin-top: 0.5em;
+    padding-top: 0.5em;
     color: rgba(0,0,0,0.7);
+}
+
+.science-articles-grid .row.dmbs-content:not(:first-child) h2.science-term-header {
+    border-top: 2px solid silver;
 }
 
 .science-articles-grid .science_article h3,
