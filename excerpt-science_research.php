@@ -16,6 +16,6 @@
 
     <p class="excerpt"><?php echo get_the_excerpt(); ?></p>
     <p class="read-more">
-        <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'devdmbootstrap3' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">Read My Take</a>
+        <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'devdmbootstrap3' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">Read My Summary</a>
     </p>
 </article>
